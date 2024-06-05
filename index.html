@@ -1,0 +1,131 @@
+<html>
+<head>
+	<title> Sum Finder App By Raj </title>
+	<style> 
+		*{font-size:50px;}
+		body{background-color:#FFE4E1}
+		.btn{border-radius:30px; margin-left:30px;}
+		.btn:hover{color:red;}
+	</style>
+
+</head>
+
+<body>
+<center>
+	<h1> Sum Finder App </h1>
+	<form onsubmit ="find()">
+	<input type="number" placeholder="Enter Integer" id="num"/>
+	<br><br>
+	<input type="submit" value="M1" class="btn"/>
+	<input type="submit" value="M2" class="btn"/>
+	<input type="submit" value="M3" class="btn"/>
+	</form>
+	<h2 id="msg"/>
+
+<script>
+	function find()
+	{
+		event.preventDefault();
+		let num = document.getElementById("num");
+		let msg = document.getElementById("msg");
+
+		if(num.value == "")
+		{
+			alert("Please Enter Integer");
+			msg.innerHTML ="";
+			num.focus();
+			return;
+			
+		}
+
+		let ele = document.activeElement.value;
+		let ans = "";
+		let n = parseFloat(num.value);
+
+		if(n < 0)
+		{
+		alert("Number Should be min.1");
+		msg.innerHTML ="";
+		num.focus();
+		return;
+		}
+
+		if (ele == "M1")
+		{
+			let sum=0, i=1;
+			while(i<=n)
+			{
+				sum = sum + i;
+				i++;
+			}
+			ans = "Sum =" + sum;
+			msg.innerHTML = "M1-->" + ans;
+		}
+
+		else if(ele == "M2")
+		{
+			let sum=0, i=1;
+			do
+			{
+				sum = sum+i;
+				i++;
+			}while(i<=n);
+			ans = "Sum =" + sum;
+			msg.innerHTML = "M2-->" + ans;
+		}
+
+		else if(ele == "M3")
+		{
+			let sum=0;
+			for(let i=1; i<=n; i++)
+				sum = sum+i;
+			ans = "Sum =" + sum;
+			msg.innerHTML = "M3-->" + ans; 
+		}
+	}
+	</script>
+
+
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
